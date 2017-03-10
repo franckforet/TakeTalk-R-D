@@ -47,7 +47,7 @@ Les branches ne sont pas encore unifiées. Une réunion de projet afin de savoir
 
 ## Sites
 Site de présentation de TakeTalk:
-franckforet/taketalk.fr
+http://franckforet.fr/taketalk
 
 ## Présentation
 english: http://alturl.com/vc257
