@@ -13,9 +13,7 @@ Aller sur le dossier en console, taper meteor, c'est fait !
 Votre appli est maintenant fonctionnelle sur le localhost.
 
 ## Tutoriel
-
-Le tutoriel est disponible sur: https://github.com/bertrandquequeville/taketalk/wiki/Tutoriel
-(V3 lien actuelement KO, un nouveau tutoriel sera réalisé)
+Un tutoriel est en cours de réalisation !
 ## Contribuez !
 
 Vous pouvez contribuer sur cette page, merci d'avance !
@@ -41,16 +39,15 @@ Les packages utilisés sont :
 ## Branches
 Les branches ne sont pas encore unifiées. Une réunion de projet afin de savoir quelles fonctionnalités garder est prévue prochainement.
 
-* https://github.com/Renkaze/TakeTalkV3/tree/devTom
-    * internationalisation
-    * groupes
-* https://github.com/franckforet/TakeTalk
+* https://github.com/franckforet/summernote
     * éditeur de texte
     * optimisation de l'interface
+    * internationalisation
+    * groupes
 
 ## Sites
 Site de présentation de TakeTalk:
-franckforet.fr
+franckforet/taketalk.fr
 
 ## Présentation
 english: http://alturl.com/vc257
