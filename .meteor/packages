@@ -25,3 +25,11 @@ fortawesome:fontawesome
 summernote:summernote
 mrt:filesaver
 chipcastledotcom:meteor-jspdf
+iron:router
+stylus
+ian:accounts-ui-bootstrap-3
+npm-bcrypt@0.8.7
+accounts-password
+tap:i18n
+tap:i18n-ui
+session
