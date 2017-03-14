@@ -1,1 +1,49 @@
 mongodb://<Franck>:<MVagusta07$>@ds131320.mlab.com:31320/heroku_1qvgmln8
+
+
+Tutoriel Heroku
+url : https://medium.com/@leonardykris/how-to-run-a-meteor-js-application-on-heroku-in-10-steps-7aceb12de234#.rm9avz9zb
+
+Step 1 : Install Meteor.js and Heroku toolbelt
+For Mac: curl https://install.meteor.com/ | sh
+For Windows: Meteor installer
+Heroku: Heroku Toolbelt
+
+Step 2 : Create your Meteor application
+meteor create foobar
+cd foobar
+
+Step 3 : Initialize the directory as a git managed repository
+git init
+git add .
+git commit -m "My first commit!
+
+Step 4 : Create your Heroku instance
+heroku login
+heroku apps:create foobar
+
+Step 5 : Set a Meteor buildpack for your Heroku instance
+heroku buildpacks:set https://github.com/jordansissel/heroku-buildpack-meteor.git
+
+Step 6 : Create a new mLab* instance
+heroku addons:create mongolab:sandbox
+
+Step 7 : Get your MongoLab URI
+heroku config | grep MONGOLAB_URI
+// Alternatively, run "heroku config" to display all your configuration variables,
+but truthfully we only need the MONGOLAB_URI.
+// Be careful of running "heroku config" and leaving your console in the open since it displays all your important
+environment variables like Stripe API keys.
+
+Step 8 : Set the configurations of your Meteor app running on Heroku
+heroku config:add MONGO_URL=<MONGOLAB_URI value>
+heroku config:add ROOT_URL=https://foobar.herokuapp.com
+
+Step 9 : Check your remotes to ensure heroku is there
+git remote -v
+// The output should look like this
+heroku https://git.heroku.com/foobar.git (fetch)
+heroku https://git.heroku.com/foobar.git (push)
+
+Step 10 : Deploy the app
+git push heroku master
