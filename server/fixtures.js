@@ -3,13 +3,13 @@ if(Meetings.find().count() === 0){
     title: 'Workshop University Of Evry',
     _id: 'meetingTest',
     animator: 'Franck',
-    time :'90',
-  })
-}
+    time :'90'
+  });
+};
 
 if ( Meteor.users.find().count() === 0 ) {
     Accounts.createUser({
         username: 'Franck',
-        email: 'taketalk@gmail.com',
+        email: 'taketalk@gmail.com'
     });
 }
