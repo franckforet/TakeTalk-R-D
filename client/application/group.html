@@ -42,3 +42,16 @@
       </div>
     </div>
   </template>
+
+
+
+
+  <template name="groupsList">
+  <div class="groups">
+    {{#each groups}}
+      {{> groupItem}}
+    {{else}}
+      <li class="placeholder">{{_ "noGroup"}} </li>
+    {{/each}}
+  </div>
+</template>

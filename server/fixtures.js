@@ -10,6 +10,8 @@ if(Meetings.find().count() === 0){
 if ( Meteor.users.find().count() === 0 ) {
     Accounts.createUser({
         username: 'Franck',
-        email: 'taketalk@gmail.com'
+        password: 'barcelone',
+        email: 'taketalk@gmail.com',
+        meeting: 'meetingTest'
     });
 }

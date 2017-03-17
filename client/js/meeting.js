@@ -9,20 +9,24 @@ Template.meeting.events({
     console.log("I click on Talk");
     //à modifier
       var userId = Meteor.user().username;
+      var meetingId = Meteor.user().meeting;
       var rank = 1;
       console.log("userId = " + userId);
-      //Recherche du speech ayant le plus haut rang
-      speeches = Speeches.find({meeting: Session.get("meetingId")}, {sort: {rank: -1}}).fetch();
-      if (speeches.length > 0) {
-          rank = speeches[0].rank+1;
-      }
-      Speeches.insert({
-          user: userId,
-          timeLeft: 0,
-          status: "pending",
-          meeting: Session.get("meetingId"),
-          rank: rank
-      });
+      console.log("meeting = " + meetingId);
+
+
+      // //Recherche du speech ayant le plus haut rang
+      // speeches = Speeches.find({meeting: Session.get("meetingId")}, {sort: {rank: -1}}).fetch();
+      // if (speeches.length > 0) {
+      //     rank = speeches[0].rank+1;
+      // }
+      // Speeches.insert({
+      //     user: userId,
+      //     timeLeft: 0,
+      //     status: "pending",
+      //     meeting: Session.get("meetingId"),
+      //     rank: rank
+      // });
   },
 
 
