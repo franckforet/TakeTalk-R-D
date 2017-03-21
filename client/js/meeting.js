@@ -2,6 +2,8 @@ import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 
 var sortableList;
+Template.meeting.isTrue = true;
+console.log(Template.meeting.isTrue);
 
 
 Template.meeting.events({
