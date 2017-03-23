@@ -19,11 +19,12 @@
         <div class="container-fluid">
           <div class="navbar-header">
             <div class="page-title">
-              <a href="{{pathFor route='home'}}" class="navbar-brand title-font"><img src="/LOGO.png" height="" width="100%" style="display:inline"></a>
+              <a href="{{pathFor route='home'}}" class="navbar-brand title-font">
+                <img src="/LOGO.png" height="" width="100%" style="display:inline"></a>
             </div>
           </div>
           <a href="#" data-toggle="collapse" data-target="#am-navbar-collapse" class="am-toggle-top-header-menu collapsed">
-            <span class="icon s7-angle-down"></span>
+            <span class="glyphicon glyphicon-menu-hamburger"></span>
           </a>
           <div id="am-navbar-collapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav am-nav-center">
@@ -34,7 +35,7 @@
               <li><a href="{{pathFor route='groups'}}">{{_ "groups"}}</a></li>
               <li class="dropdown">
                 <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="dropdown-toggle">{{_ "lang"}}
-                  <span class="angle-down s7-angle-down" aria-hidden="true"></span>
+                  <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>
                 </a>
                 <ul role="menu" class="dropdown-menu">
                   <li>{{> i18n_buttons}}</li>
@@ -66,5 +67,8 @@
         </p>
       </footer>
     </div>
+    <script type="text/javascript">
+
+</script>
   </body>
 </template>

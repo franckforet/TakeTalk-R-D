@@ -55,7 +55,7 @@ Template.create.events({
       time: timeMeeting,
       password: pass,
     });
-
+    var userId = Meteor.userId();
     //Création de l'utilisateur animateur
     //voir comment ajouter un champ au User via Account.ui
     //le champ sera : isAnimator
