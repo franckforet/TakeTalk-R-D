@@ -100,9 +100,8 @@ Template.create.events({
 });
 
 Template.create.onRendered(function (){
-  console.log(Meteor.user().email);
   if (Meteor.userId() != null){
      $(' #animatorName').val(Meteor.user().username);
-     $(' #animatorEmail').val(Meteor.user().email);
+     $(' #animatorEmail').val(Meteor.user().profile.email);
   };
 });
