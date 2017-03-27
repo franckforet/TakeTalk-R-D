@@ -1,12 +1,6 @@
 Accounts.ui.config({
-  passwordSignupFields: 'USERNAME_ONLY',
+  passwordSignupFields: 'USERNAME_AND_EMAIL',
   extraSignupFields: [
-    {
-      fieldName: 'email',
-      fieldLabel: '@',
-      inputType: 'text',
-      visible: true,
-    },
     {
         fieldName: 'last-name',
         fieldLabel: 'Last name',
