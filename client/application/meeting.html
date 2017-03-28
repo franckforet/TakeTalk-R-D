@@ -3,7 +3,10 @@
     {{#if currentUser}}
 
     <div class="col-md-8">
+
       {{> meetingReport}}
+      {{> hello}}
+
     </div>
 
     <!--START PREMIER PANL DROITE : Time Management -->
@@ -53,14 +56,14 @@
                 {{/if}}
               </span>
             </div>
-              {{#if isSpeaker}}
-              <div class="col-md-3">
-                <span class="label label-info input-group-addon" >
-                  <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
-                </span>
-              </div>
+            {{#if isSpeaker}}
+            <div class="col-md-3">
+              <span class="label label-info input-group-addon" >
+                <span class="glyphicon glyphicon-volume-up" aria-hidden="true"></span>
+              </span>
+            </div>
 
-              {{/if}}
+            {{/if}}
             <div class="col-md-3 text-right">
               <input type="button" class="btn btn-primary" role="button" id="speakControl" value="take" {{disabled}}>
             </div>
@@ -124,6 +127,44 @@
 <!-- panel-body -->
 </div>
 </div>
+
+<div class="col-md-4">
+  <div class="panel panel-default panel-heading-fullwidth panel-primary">
+    <div class="panel-heading"><span class="title">People on this meeting</span></div>
+    <div class="panel-body">
+      <div class="row">
+        <!-- {{#each Users} -->
+        <!-- Liste des intervenant -->
+        <div class="col-md-11" style="padding-right:0">
+          <div class="list-group">
+
+            {{#each users}}
+            <p><a href="#" id="makeCall">Call {{#each emails}}{{address}}{{/each}}</a></p>
+            {{/each}}
+
+            <!-- <h4 class="list-group-item-heading">{{Meteor.username}}</h4> -->
+            <p>
+              {{#each paroles}}
+              {{>parole}}
+              {{/each}}
+            </p>
+          </div>
+        </div>
+        <!-- Actions possibles en rapport avec l'intervenant -->
+        <!-- <div class="col-md-1" style="padding-left:0">
+        {{#if isSessionGuest name}}
+        <div class="input-group guestRemove" guest="{{name}}">
+        <button type="button" class="btn btn-danger btn-xs removeGuest">
+        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+      </button>
+    </div>
+    {{/if}}
+  </div> -->
+  <!-- {{/each}} -->
+</div>
+</div> <!-- panel-body -->
+</div>
+</div>
 <!--FIN PREMIER PANEL DROITE : participant -->
 
 
@@ -132,7 +173,7 @@
 <div class="col-md-4">
   <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#localModal">Add local participant</button> -->
   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#invitationModal">Invite participants</button>
-  <button type="button" class="btn btn-danger" role="button" id="closeMeeting">Close meeting</button>
+  <!-- <button type="button" class="btn btn-danger" role="button" id="closeMeeting">Close meeting</button> -->
 
 </div>
 <!--FIN THIRD PANEL DROITE : bouton -->
@@ -158,51 +199,53 @@
 <!-- **************************************** -->
 <!-- Modal d'ajout d'un participant ext�rieur -->
 <!-- **************************************** -->
-<!-- <div class="modal fade" id="invitationModal" tabindex="-1" role="dialog" aria-labelledby="invitationModalLabel">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title" id="invitationModalLabel">Invite Participants</h4>
+<div class="modal fade" id="invitationModal" tabindex="-1" role="dialog" aria-labelledby="invitationModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="invitationModalLabel">Invite Participants</h4>
+      </div>
+      <div class="modal-body">
+        <!--
+        <h3>By QR Code</h3>
+        <div id="qrcode"></div>
+      -->
+      <h3>By email address</h3>
+      <form role="form" id="inviteForm">
+        <div class="form-group email-input-group">
+          <label class="control-label">Your participants' e-mails</label>
+          <div class="participantEmailInput" rank="1">
+            <div class="input-group xs-mb-15"><span class="input-group-addon">@</span>
+              <input class="participantsEmails form-control" name="participantsEmails" type="email" parsley-type="email">
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button id="inviteSubmit" type="submit" class="btn btn-primary">Invite</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
-<div class="modal-body">
-
-<h3>By email address</h3>
-<form role="form" id="inviteForm">
-<div class="form-group email-input-group">
-<label class="control-label">Your participants' e-mails</label>
-<div class="participantEmailInput" rank="1">
-<div class="input-group xs-mb-15"><span class="input-group-addon">@</span>
-<input class="participantsEmails form-control" name="participantsEmails" type="email" parsley-type="email">
 </div>
-</div>
-</div>
-<div class="modal-footer">
-<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-<button id="inviteSubmit" type="submit" class="btn btn-primary">Invite</button>
-</div>
-</form>
-</div>
-</div>
-</div>
-</div> -->
 <!-- ************************************************************************************************************* -->
 <!-- Modal de notification qui s'affiche sur le dashboard d'un intervenant auquel l'animateur a supprim� le speech -->
 <!-- ************************************************************************************************************* -->
-<!-- <div class="modal fade" id="speech-delete-modal" tabindex="-1" role="dialog" aria-labelledby="speech-delete-label">
-<div class="modal-dialog" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<h4 class="modal-title" id="speech-delete-label">Invite Participants</h4>
+<div class="modal fade" id="speech-delete-modal" tabindex="-1" role="dialog" aria-labelledby="speech-delete-label">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="speech-delete-label">Invite Participants</h4>
+      </div>
+      <div class="modal-body">
+        Your speech have been deleted
+      </div>
+    </div>
+  </div>
 </div>
-<div class="modal-body">
-Your speech have been deleted
-</div>
-</div>
-</div>
-</div> -->
-
 </template>
 
 <template name="parole">
