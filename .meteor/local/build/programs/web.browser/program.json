@@ -51,9 +51,9 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=ae29652ed0723b8e734703ea6050d8eade204dc4",
+      "url": "/packages/modules.js?hash=f98de4b8e6ab4a3f68c8a5c0db27e565548b05c2",
       "size": 383590,
-      "hash": "ae29652ed0723b8e734703ea6050d8eade204dc4"
+      "hash": "f98de4b8e6ab4a3f68c8a5c0db27e565548b05c2"
     },
     {
       "path": "packages/es5-shim.js",
@@ -809,11 +809,11 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=8f6a69c1e5e009625d607ed8d555dc81e778f521",
+      "url": "/app/app.js?hash=5b6e79cb0cd15578122169e8f7e052c5815881ab",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/8f6a69c1e5e009625d607ed8d555dc81e778f521.map",
-      "size": 230731,
-      "hash": "8f6a69c1e5e009625d607ed8d555dc81e778f521"
+      "sourceMapUrl": "/app/5b6e79cb0cd15578122169e8f7e052c5815881ab.map",
+      "size": 656774,
+      "hash": "5b6e79cb0cd15578122169e8f7e052c5815881ab"
     },
     {
       "path": "packages/service-configuration.js",
